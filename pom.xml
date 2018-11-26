@@ -10,6 +10,7 @@
     <version>0.0.01</version>
     <modules>
         <module>90SubsetsII</module>
+        <module>46Permutations</module>
     </modules>
 
     <build>
