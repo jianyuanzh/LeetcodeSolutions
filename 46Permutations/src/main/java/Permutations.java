@@ -24,8 +24,8 @@ public class Permutations {
         }
 
         Map<Integer, Boolean> vistedMap = new HashMap<>();
-        for (Integer n : nums) {
-            vistedMap.put(n, false);
+        for (int i = 0; i < nums.length; i++) {
+            vistedMap.put(i, false);
         }
 
         Arrays.sort(nums);
@@ -42,20 +42,26 @@ public class Permutations {
 
         for (int i = 0; i<sortedNums.length; i++) {
             int cur = sortedNums[i];
-            if (vistedMap.get(cur)) {
+            if (vistedMap.get(i)) {
                 continue;
             }
             current.add(cur);
-            vistedMap.put(cur, true);
+            vistedMap.put(i, true);
             dfs(sortedNums, result, vistedMap, current);
             current.removeLast();
-            vistedMap.put(cur, false);
+            vistedMap.put(i, false);
         }
     }
 
 
     public static void main(String[] args) {
+        System.out.println("Case 1");
         for (List<Integer> ret : new Permutations().permute(new int[]{1,2,3})) {
+            System.out.println(ret);
+        }
+
+        System.out.println("Case 2");//1,1,2
+        for (List<Integer> ret : new Permutations().permute(new int[]{1,1,2})) {
             System.out.println(ret);
         }
     }

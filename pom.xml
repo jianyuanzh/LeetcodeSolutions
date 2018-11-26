@@ -11,6 +11,7 @@
     <modules>
         <module>90SubsetsII</module>
         <module>46Permutations</module>
+        <module>47PermutationsII</module>
     </modules>
 
     <build>
